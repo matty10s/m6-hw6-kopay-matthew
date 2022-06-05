@@ -9,19 +9,28 @@ body {
   background: url('../images/papertexture.jpg');
 }
 
-.container {
-  max-width: 900px;
-  margin:0 auto;
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
-.container::after {
+.flex-container::after {
+  display: flex;
   content: "";
-  display: block;
+  justify-content: flex-end;
   clear: both;
 }
 
-body > .container {
+body > .flex-container {
   margin-top: 100px;
+}
+
+.box {
+  display: flex;
+  padding-left: 10%;
+  -ms-flex-item-align: start;
+  flex-direction: reverse;
 }
 
 header {
@@ -31,9 +40,10 @@ border-bottom: 1px solid black;
 }
 
 h1 {
-   display: inline-block;
+   display: flex;
+   flex-wrap: wrap;
    width: 30%;
-   font-family: sans-serif;
+   font-family: Arial;
 }
 
 h2,
@@ -42,7 +52,7 @@ h4,
 h5,
 h6 {
   margin-bottom: 20px;
-  font-family: sans-serif;
+  font-family: Arial;
 }
 
 p {
@@ -60,15 +70,15 @@ ul {
 }
 
 nav {
-   display: inline-block;
-   width: 60%;
+   display: flex;
+   -ms-flex-align: start;
    text-align: right;
 }
 
 nav a {
   text-decoration: none;
   font-weight: bold;
-  font-family: sans-serif;
+  font-family: Arial;
   background: #333;
   color: white;
   padding: 10px 20px;
@@ -83,18 +93,18 @@ aside {
 
 main {
   max-width: 59%;
-  float: left;
+  flex: auto;
   padding: 20px;
   margin-right: 30px;
 }
 
 main img{
-  float: left;
+  flex: auto;
   margin-right: 30px;
 }
 
 aside {
-  float: left;
+  flex: auto;
   padding: 20px;
 }
 
